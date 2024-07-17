@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人项目</title>
+    <link rel="stylesheet" href="https://unpkg.com/vant@2.12/lib/index.css" />
+    <style>
+        html,
+        body {
+            width: 100vw;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        .bodybox {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bodybox">
+        <div id="app">
+            <van-tabs v-model="active">
+                <van-tab title="幻境文渊app">
+                    <van-cell title="项目结构">
+                        <template #label>
+                            <van-image :src="imgoneurl" @click="img(imgoneurl)" />
+                        </template>
+                    </van-cell>
+                    <van-cell title="项目图片">
+                        <template #label>
+                            <van-grid :column-num="3">
+                                <van-grid-item v-for="(item,index) in dataimgone" :key="index">
+                                    <div>{{item.name}}</div>
+                                    <van-image :src="item.url" @click="img(item.url)"/>
+                                </van-grid-item>
+                            </van-grid>
+                        </template>
+                    </van-cell>
+                </van-tab>
+                <van-tab title="影视梦游app">
+                    <van-cell title="项目结构">
+                        <template #label>
+                            <van-image :src="imgtwourl" @click="img(imgtwourl)" />
+                        </template>
+                    </van-cell>
+                    <van-cell title="项目图片">
+                        <template #label>
+                            <van-grid :column-num="3">
+                                <van-grid-item v-for="(item,index) in dataimgtwo" :key="index">
+                                    <div>{{item.name}}</div>
+                                    <van-image :src="item.url" @click="img(item.url)"/>
+                                </van-grid-item>
+                            </van-grid>
+                        </template>
+                    </van-cell>
+                </van-tab>
+                <van-tab title="校园跑腿小程序">
+                    <van-cell title="项目结构">
+                        <template #label>
+                            <van-image :src="imgthreeurl" @click="img(imgthreeurl)" />
+                        </template>
+                    </van-cell>
+                    <van-cell title="项目图片">
+                        <template #label>
+                            <van-grid :column-num="3">
+                                <van-grid-item v-for="(item,index) in dataimgthree" :key="index">
+                                    <div>{{item.name}}</div>
+                                    <van-image :src="item.url" @click="img(item.url)"/>
+                                </van-grid-item>
+                            </van-grid>
+                        </template>
+                    </van-cell>
+                </van-tab>
+            </van-tabs>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@2.6/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/vant@2.12/lib/vant.min.js"></script>
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                active: 0,
+                imgoneurl: './第一次项目结构图.png',
+                dataimgone: [
+                    {
+                        name: '登录',
+                        url: './第一次项目/登录.png'
+                    },
+                    {
+                        name: '分类',
+                        url: './第一次项目/分类.png'
+                    },
+                    {
+                        name: '开屏广告',
+                        url: './第一次项目/开屏广告.png'
+                    },
+                    {
+                        name: '目录',
+                        url: './第一次项目/目录.png'
+                    },
+                    {
+                        name: '评论',
+                        url: './第一次项目/评论.png'
+                    },
+                    {
+                        name: '实时搜索',
+                        url: './第一次项目/实时搜索.png'
+                    },
+                    {
+                        name: '书城',
+                        url: './第一次项目/书城.png'
+                    },
+                    {
+                        name: '书籍内容1',
+                        url: './第一次项目/书籍内容1.png'
+                    },
+                    {
+                        name: '书籍内容2',
+                        url: './第一次项目/书籍内容2.png'
+                    },
+                    {
+                        name: '书籍详情',
+                        url: './第一次项目/书籍详情.png'
+                    },
+                    {
+                        name: '书架',
+                        url: './第一次项目/书架.png'
+                    },
+                    {
+                        name: '搜索热门',
+                        url: './第一次项目/搜索热门.png'
+                    },
+                    {
+                        name: '我的',
+                        url: './第一次项目/我的.png'
+                    },
+                    {
+                        name: '详细搜索',
+                        url: './第一次项目/详细搜索.png'
+                    },
+                ],
+                imgtwourl:  './第二次项目结构图.png',
+                dataimgtwo:[
+                    {
+                        name:'登录',
+                        url:'./第二次项目/登录.png'
+                    },
+                    {
+                        name:'对话',
+                        url:'./第二次项目/对话.png'
+                    },
+                    {
+                        name:'视频内容',
+                        url:'./第二次项目/视频内容.png'
+                    },
+                    {
+                        name:'视频评论',
+                        url:'./第二次项目/视频评论.png'
+                    },
+                    {
+                        name:'首页',
+                        url:'./第二次项目/首页.png'
+                    },
+                    {
+                        name:'竖屏',
+                        url:'./第二次项目/竖屏.png'
+                    },
+                    {
+                        name:'搜索',
+                        url:'./第二次项目/搜索.png'
+                    },
+                    {
+                        name:'搜索热门',
+                        url:'./第二次项目/搜索内热门.png'
+                    },
+                    {
+                        name:'搜索筛选',
+                        url:'./第二次项目/搜索筛选.png'
+                    },
+                    {
+                        name:'我的',
+                        url:'./第二次项目/我的.png'
+                    },
+                    {
+                        name:'消息',
+                        url:'./第二次项目/消息.png'
+                    },
+                ],
+                imgthreeurl:'./第三次项目结构图.png',
+                dataimgthree:[
+                    {
+                        name:'发布大厅',
+                        url:'./第三次项目/发布大厅.png'
+                    },
+                    {
+                        name:'订单中心',
+                        url:'./第三次项目/订单中心.png'
+                    },
+                    {
+                        name:'订单中心-运行中',
+                        url:'./第三次项目/订单中心-运行中.png'
+                    },
+                    {
+                        name:'订单中心-退单',
+                        url:'./第三次项目/订单中心-退单.png'
+                    },
+                    {
+                        name:'接单中心',
+                        url:'./第三次项目/接单中心.png'
+                    },
+                    {
+                        name:'接单中心-运行中',
+                        url:'./第三次项目/接单中心-运行中.png'
+                    },
+                    {
+                        name:'接单中心-已完成',
+                        url:'./第三次项目/接单中心-已完成.png'
+                    },
+                    {
+                        name:'收入流水',
+                        url:'./第三次项目/收入流水.png'
+                    },
+                    {
+                        name:'我的',
+                        url:'./第三次项目/我的.png'
+                    },
+                    {
+                        name:'个人信息更改',
+                        url:'./第三次项目/个人信息更改.png'
+                    },
+                    {
+                        name:'我的消息',
+                        url:'./第三次项目/我的消息.png'
+                    },
+                    {
+                        name:'消息对话',
+                        url:'./第三次项目/消息对话.png'
+                    },
+                ],
+            },
+            methods: {
+                img(url) {
+                    vant.ImagePreview([url]);
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
